@@ -12,7 +12,7 @@ import random
 import string
 
 # ---------- تنظیمات جدید ----------
-TOKEN = "8839873832:AAHfL0QdtuimKzb-ravxFOQr3vwKSQTBm4M"
+TOKEN = "8839873832:AAEseajLNeBDhM4p7zbR3IM93t5n1QUrSUg"
 MASTER_ADMIN_ID = 8828921082
 ADMIN_USERNAME = "itgvpn_suport"
 SUPPORT_LINK = "https://t.me/itgvpn_suport"
