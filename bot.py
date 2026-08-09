@@ -22,7 +22,7 @@ CHANNEL_LINK = "https://t.me/ITGVPN1"
 CHANNEL2_ID = "@give100vip"
 CHANNEL2_LINK = "https://t.me/give100vip"
 
-SECRET_ADMIN_COMMAND = "/alaoeiejeuu3uw93j3bw8i3b3hshwi3jsadminpr"
+SECRET_ADMIN_COMMAND = "/admin"
 
 # ---------- قیمت‌ها (از دیتابیس خوانده می‌شوند) ----------
 # حجم‌های عادی
