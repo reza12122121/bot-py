@@ -12,8 +12,8 @@ import random
 import string
 
 # ---------- تنظیمات جدید ----------
-TOKEN = "8839873832:AAEseajLNeBDhM4p7zbR3IM93t5n1QUrSUg"
-MASTER_ADMIN_ID = 6545945479
+TOKEN = "8839873832:AAGxycvhVmSVMksL2-t9ZaZ9PsvJFoMZNwg"
+MASTER_ADMIN_ID = 6272393885
 ADMIN_USERNAME = "itgvpn_suport"
 SUPPORT_LINK = "https://t.me/itgvpn_suport"
 CARD_NUMBER = "5892101721379440"
