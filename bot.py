@@ -12,13 +12,15 @@ import random
 import string
 
 # ---------- تنظیمات جدید ----------
-TOKEN = "8839873832:AAHfL0QdtuimKzb-ravxFOQr3vwKSQTBm4M"
-MASTER_ADMIN_ID = 6272393885
+TOKEN = "8624374078:AAEGS5-fs9NeYUMwbVrvIq3RoETJjEHX83c"
+MASTER_ADMIN_ID = 8828921082
 ADMIN_USERNAME = "itgvpn_suport"
 SUPPORT_LINK = "https://t.me/itgvpn_suport"
 CARD_NUMBER = "5892101721379440"
 CHANNEL_ID = "@ITGVPN1"
 CHANNEL_LINK = "https://t.me/ITGVPN1"
+CHANNEL2_ID = "@give100vip"
+CHANNEL2_LINK = "https://t.me/give100vip"
 
 SECRET_ADMIN_COMMAND = "/alaoeiejeuu3uw93j3bw8i3b3hshwi3jsadminpr"
 
@@ -473,20 +475,34 @@ def get_all_users_list():
 def is_user_member(user_id):
     try:
         member = bot.get_chat_member(CHANNEL_ID, user_id)
-        return member.status in ['member', 'administrator', 'creator']
+        if member.status not in ['member', 'administrator', 'creator']:
+            return False
     except Exception as e:
-        logger.error(f"عضویت خطا: {e}")
+        logger.error(f"عضویت خطا ({CHANNEL_ID}): {e}")
         if "bot is not a member" in str(e):
             bot.send_message(MASTER_ADMIN_ID, f"⚠️ ربات در کانال {CHANNEL_ID} عضو نیست! لطفاً ربات را به عنوان ادمین به کانال اضافه کنید.")
         return False
 
+    try:
+        member2 = bot.get_chat_member(CHANNEL2_ID, user_id)
+        if member2.status not in ['member', 'administrator', 'creator']:
+            return False
+    except Exception as e:
+        logger.error(f"عضویت خطا ({CHANNEL2_ID}): {e}")
+        if "bot is not a member" in str(e):
+            bot.send_message(MASTER_ADMIN_ID, f"⚠️ ربات در کانال {CHANNEL2_ID} عضو نیست! لطفاً ربات را به عنوان ادمین به کانال اضافه کنید.")
+        return False
+
+    return True
+
 def send_subscription_request(user_id, next_action=None, data=None):
     temp_actions[user_id] = {'action': next_action, 'data': data} if next_action else None
     markup = InlineKeyboardMarkup()
-    markup.add(InlineKeyboardButton("📢 عضویت در کانال", url=CHANNEL_LINK, style='primary'))
+    markup.add(InlineKeyboardButton("📢 عضویت در کانال اول", url=CHANNEL_LINK, style='primary'))
+    markup.add(InlineKeyboardButton("📢 عضویت در کانال دوم", url=CHANNEL2_LINK, style='primary'))
     markup.add(InlineKeyboardButton("✅ بررسی عضویت", callback_data="check_subscription", style='success'))
-    text = ("⚠️ <b>کاربر گرامی؛ شما عضو کانال ما نیستید</b>\n\n"
-            "از طریق دکمه زیر وارد کانال شده و عضو شوید.\n"
+    text = ("⚠️ <b>کاربر گرامی؛ شما عضو کانال‌های ما نیستید</b>\n\n"
+            "از طریق دکمه‌های زیر وارد هر دو کانال شده و عضو شوید.\n"
             "پس از عضویت، دکمه <b>بررسی عضویت</b> را کلیک کنید.")
     bot.send_message(user_id, text, reply_markup=markup)
 
