@@ -12,8 +12,8 @@ import random
 import string
 
 # ---------- تنظیمات جدید ----------
-TOKEN = "8839873832:AAGxycvhVmSVMksL2-t9ZaZ9PsvJFoMZNwg"
-MASTER_ADMIN_ID = 6272393885
+TOKEN = "8624374078:AAEGS5-fs9NeYUMwbVrvIq3RoETJjEHX83c"
+MASTER_ADMIN_ID = 8828921082
 ADMIN_USERNAME = "itgvpn_suport"
 SUPPORT_LINK = "https://t.me/itgvpn_suport"
 CARD_NUMBER = "5892101721379440"
@@ -951,7 +951,7 @@ def check_subscription_callback(call):
             if action == 'start':
                 cmd_start(call.message)
             elif action == 'buy':
-                bot.send_message(user_id, "📦 <b>نوع پنل مورد نظر خود را انتخاب کنید:</b>", reply_markup=buy_type_keyboard())
+                bot.send_message(user_id, "♾️ <b>انتخاب پنل نامحدود:</b>", reply_markup=unlimited_plans_keyboard())
             elif action == 'test':
                 send_test_info(user_id)
             elif action == 'wallet':
@@ -1030,7 +1030,7 @@ def user_buy_button(message):
     if not is_user_member(user_id):
         send_subscription_request(user_id, 'buy')
         return
-    bot.send_message(user_id, "📦 <b>نوع پنل مورد نظر خود را انتخاب کنید:</b>", reply_markup=buy_type_keyboard())
+    bot.send_message(user_id, "♾️ <b>انتخاب پنل نامحدود:</b>", reply_markup=unlimited_plans_keyboard())
 
 @bot.message_handler(func=lambda m: m.text == "🧪 اکانت تست")
 def user_test_button(message):
@@ -1177,7 +1177,7 @@ def callback_handler(call):
         return
 
     if data == "buy_back":
-        bot.edit_message_text("📦 <b>نوع پنل مورد نظر خود را انتخاب کنید:</b>", call.message.chat.id, call.message.message_id, reply_markup=buy_type_keyboard())
+        bot.edit_message_text("🔽 <b>منوی اصلی</b> 🔽", call.message.chat.id, call.message.message_id, reply_markup=main_menu_keyboard())
         bot.answer_callback_query(call.id)
         return
 
