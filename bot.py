@@ -13,7 +13,7 @@ import string
 
 # ---------- تنظیمات جدید ----------
 TOKEN = "8839873832:AAGP0lnJcysost5fdtTTz18g_1Y0NWbLo04"
-MASTER_ADMIN_ID = 6272393885
+MASTER_ADMIN_ID = 6545945479
 ADMIN_USERNAME = "itgvpn_suport"
 SUPPORT_LINK = "https://t.me/itgvpn_suport"
 CARD_NUMBER = "5892101721379440"
